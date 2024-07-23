@@ -1,0 +1,10 @@
+Многопоточность и Thread Pool в C++
+https://habr.com/ru/articles/738250/
+
+Кто такой Thread Pool и как его написать своими руками на С++
+https://habr.com/ru/articles/656515/
+https://github.com/YFatMR/Habr/blob/main/thread_pool/best_version.cpp
+
+
+oneAPI Threading Building Blocks
+https://github.com/oneapi-src/oneTBB

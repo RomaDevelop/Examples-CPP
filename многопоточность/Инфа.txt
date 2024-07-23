@@ -1,0 +1,2 @@
+Процессы и потоки Win32
+https://www.youtube.com/watch?v=c__SQwCOcBc&list=WL&index=14&pp=gAQBiAQB

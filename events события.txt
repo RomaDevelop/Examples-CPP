@@ -1,0 +1,15 @@
+
+C++11 и обработка событий
+
+https://habr.com/ru/articles/424593/
+
+
+Обработка событий в неуправляемом C++
+https://learn.microsoft.com/ru-ru/cpp/cpp/event-handling-in-native-cpp?view=msvc-170
+
+
+Введение. Обработка событий в С++
+https://it.wikireading.ru/38886
+
+Реализация обработки событий на C++ - Программные продукты - Статьи
+http://www.interface.ru/home.asp?artId=27660

@@ -1,0 +1,80 @@
+ru.stackoverflow.com/questions/485779/Как-объявить-массив-лямбд
+
+#include <iostream>
+#include <vector>
+#include <functional>
+using namespace std;
+
+
+int main()
+{
+    std::vector<std::function<int(void)>> lambdas;
+
+    int a=5, b=10;
+    lambdas.push_back([a](){ return a; });
+    lambdas.push_back([b](){ return b; });
+
+    for(auto &l:lambdas)
+        cout << l() << endl;
+    cout << endl;
+    
+    std::vector<std::function<int(void)>> lambdas3;
+    int i0=1, i1=2;
+    lambdas3.push_back([](){ return -1; });
+    lambdas3.push_back([=](){ return i0 + i1; });
+    lambdas3.push_back([i0](){ return i0; });
+    lambdas3.push_back([&i0](){ return i0++; });
+    lambdas3.push_back([&](){ return i0++ + i1++; });
+    lambdas3.push_back([&i0,i1](){ return i0++ + i1; });
+
+    for(auto &l:lambdas3)
+    {
+        cout << l() << endl;
+    }
+}
+
+
+Просто оберни создание лямбды в функцию:
+
+#include <vector>
+
+constexpr auto make_lambda(int z) {
+    return [z](int i, int j) { return i + j + z; };
+}
+
+NB Приоритет за ответом Max (непосредственно перед). Если вы считаете что мой ответ достоин плюса, сперва нажмите плюс на его ответе. Я не удаляю свой ответ, так как тут приведены полные примеры, которые могут быть практически полезными.
+
+Функция возвращающая лямбды может быть использована для заполнения массива:
+
+std::vector<decltype(make_lambda(42))> v{make_lambda(1), make_lambda(2)};
+
+#include <iostream>
+
+auto make_add(int a) {
+    return [a](int b) { return a + b; };
+}
+
+int main() {
+    decltype(make_add(0)) lambdas[] = {
+        make_add(41), make_add(42), make_add(43)
+    };
+    for (auto lambda: lambdas) {
+        std::cout << lambda(1) << '\n';
+    }
+}
+
+
+#include <iostream>
+
+auto make_line(double k, double b) {
+    return [k, b](double x) { return k * x + b; };
+}
+
+int main() {
+    decltype(make_line(0, 0)) lines[] = {
+        make_line(1, 0.4), make_line(2, 0.5), make_line(3, 0.6)
+    };
+    for (auto line: lines) {
+        std::cout << line(10) << '\n';
+    }
+}
