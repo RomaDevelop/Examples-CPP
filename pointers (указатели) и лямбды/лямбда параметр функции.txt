@@ -1,0 +1,43 @@
+#include <iostream>
+#include <functional>
+
+void run_lambda(const std::function<void()>& lambda) {
+    // Выполнение лямбды
+    lambda();
+}
+
+int main() {
+    int count = 0;
+    auto increment_count = [&count] {
+        // Лямбда с захватом переменной count
+        count++;
+        std::cout << "Count: " << count << std::endl;
+    };
+
+    run_lambda(increment_count); // Запуск лямбды
+
+    return 0;
+}
+
+
+#include <iostream>
+#include <functional>
+
+template<typename Func>
+void run_lambda(Func&& func) {
+    // Выполнение лямбды
+    func();
+}
+
+int main() {
+    int count = 0;
+    auto increment_count = [&count] {
+        // Лямбда с захватом переменной count
+        count++;
+        std::cout << "Count: " << count << std::endl;
+ };
+
+    run_lambda(increment_count); // Запуск лямбды
+
+    return 0;
+}
