@@ -20,7 +20,7 @@ int _tmain(int argc, _TCHAR* argv[]) {
     str=str3;
     cout<<str<<endl;
     
-    str[0]='A';                             // []
+    str[0]='A';                             
     cout<<str<<endl;
     
 	// преобразование строки в число
