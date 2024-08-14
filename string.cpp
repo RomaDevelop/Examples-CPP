@@ -8,7 +8,7 @@ using std::cout;
 using std::endl;
 
 int _tmain(int argc, _TCHAR* argv[]) {
-    string str="some text";                 // inicialize
+    string str="some text";                
     cout<<str<<endl;
     
     string str2("other text");
