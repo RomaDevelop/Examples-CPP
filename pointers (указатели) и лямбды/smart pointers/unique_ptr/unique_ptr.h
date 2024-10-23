@@ -7,31 +7,28 @@ template <typename T>
 class unique_ptr
 {
 	T *ptr = nullptr;
+	
+	unique_ptr(T *newObject): ptr {newObject} {}
 
 public:
 
 	unique_ptr() = default;
-	~unique_ptr() { if(ptr) delete ptr; }
-
-	unique_ptr(T *newObject)
-	{
-		if(ptr) delete ptr;
-		ptr = newObject;
-	}
+	~unique_ptr() { delete ptr; }
 
 	unique_ptr(unique_ptr<T> &uptr) = delete;
-	unique_ptr(unique_ptr<T> &&newObject)
+	unique_ptr(unique_ptr<T> &&newObject): ptr {newObject.ptr}
 	{
-		*this = std::move(newObject);
+		newObject.ptr = nullptr;
 	}
 
 	unique_ptr& operator= (unique_ptr<T> &uptr) = delete;
-	unique_ptr& operator= (unique_ptr<T> &&newObject)
-	{
-		if(ptr) delete ptr;
-		ptr = newObject.ptr;
-		newObject.ptr = nullptr;
-	}
+	unique_ptr& operator= (unique_ptr<T> &&newObject) = delete;
+	
+	T* operator->() const { return ptr; }
+    T& operator*() const { return *ptr; }
+	
+	template <typename T, class... Args>
+	friend unique_ptr<T> make_unique(Args&&... args);
 };
 
 template <typename T, class... Args>
