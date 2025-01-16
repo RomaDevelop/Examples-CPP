@@ -59,6 +59,14 @@ public:
 	Shape(int x_, int y_) {x=x_; y=y_;}
 };
 // нельзя создать экземпляр абстрактного класса! Shape shape; выдаст ошибку компиляции.
+// можно создать реализацию для абстрактного метода
+double Shape::getSquare()
+{
+    cout << "strange";
+	return {};
+	// для его вызова в методе наследника пишем Shape::getSquare();
+}
+
 
 class Pramoug: public Shape{
 	public:
