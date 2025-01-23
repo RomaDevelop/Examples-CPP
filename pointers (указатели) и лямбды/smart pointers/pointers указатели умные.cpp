@@ -57,20 +57,20 @@ int main() {
     
 //массив двумерный    
     struct T
-{
-    T() { static int i=0; i++; cout << "created " << i << "\n"; }
-    ~T() { static int i=0; i++; cout << "deleted " << i << "\n"; }
-};
+	{
+		T() { static int i=0; i++; cout << "created " << i << "\n"; }
+		~T() { static int i=0; i++; cout << "deleted " << i << "\n"; }
+	};
 
-{
-    int rc=10, cc=5;
-    typedef unique_ptr<T[]> row;
-    auto arr2 { make_unique<row[]>(rc) };
-    for(int i=0; i<rc; i++)
-        arr2[i] = make_unique<T[]>(cc);
-    
-    cout << "\n\nend\n\n";
-}
+	{
+		int rc=10, cc=5;
+		typedef unique_ptr<T[]> row;
+		auto arr2 { make_unique<row[]>(rc) };
+		for(int i=0; i<rc; i++)
+			arr2[i] = make_unique<T[]>(cc);
+		
+		cout << "\n\nend\n\n";
+	}
         
 
     return 0;
