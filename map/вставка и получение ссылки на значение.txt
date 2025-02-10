@@ -1,0 +1,4 @@
+std::map<QString,int> intValues;
+int &rowIndex = intValues.insert({"rowIndex",0}).first->second;
+											//	.first - первая часть возвращаемого значениея - итератор на вставленный или существующий элемент (пара ключ/значение)
+											//	.first->second - значение из пары
