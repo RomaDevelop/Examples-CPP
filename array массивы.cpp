@@ -14,14 +14,14 @@ int ar[]={1,5,8,3,15};
 cout<<"memory "<<sizeof(ar)<<endl;
 cout<<"size "<<sizeof(ar)/sizeof(ar[0])<<endl;
 cout<<"adress ar = "<<ar<<endl;
-cout<<"adress ar+1 = "<<ar+1<<endl;      // âûâåñòè ìîæíî
+cout<<"adress ar+1 = "<<ar+1<<endl;      // Ğ²Ñ‹Ğ²ĞµÑÑ‚Ğ¸ Ğ¼Ğ¾Ğ¶Ğ½Ğ¾
 
 // foreach static array
 cout<<"ar contains ";
 for(int a:ar) cout<<a<<" ";
 	cout<<endl;
 
-//ar=ar+1;                               // èçìåíèòü íåëüçÿ êîìïèëÿòîğ ğóãàåòñÿ
+//ar=ar+1;                               // Ğ¸Ğ·Ğ¼ĞµĞ½Ğ¸Ñ‚ÑŒ Ğ½ĞµĞ»ÑŒĞ·Ñ ĞºĞ¾Ğ¼Ğ¿Ğ¸Ğ»ÑÑ‚Ğ¾Ñ€ Ñ€ÑƒĞ³Ğ°ĞµÑ‚ÑÑ
 //cout<<"ar contains ";
 //for(int a:ar) cout<<a<<" ";
 //cout<<endl;
@@ -31,20 +31,20 @@ cout<<endl<<"------------------------------------"<<endl;
 int size=6;
 int *ar_d=new int [size] {10,20,4,7,8};
 
-cout<<"memory "<<sizeof(ar_d)<<endl;                  // íå ğàáîòàåò
-cout<<"size "<<sizeof(ar_d)/sizeof(ar_d[0])<<endl;    // íå ğàáîòàåò
+cout<<"memory "<<sizeof(ar_d)<<endl;                  // Ğ½Ğµ Ñ€Ğ°Ğ±Ğ¾Ñ‚Ğ°ĞµÑ‚
+cout<<"size "<<sizeof(ar_d)/sizeof(ar_d[0])<<endl;    // Ğ½Ğµ Ñ€Ğ°Ğ±Ğ¾Ñ‚Ğ°ĞµÑ‚
 cout<<"adress ar_d = "<<ar_d<<endl;
-cout<<"adress ar_d+1 = "<<ar_d+1<<endl;      // âûâåñòè ìîæíî
+cout<<"adress ar_d+1 = "<<ar_d+1<<endl;      // Ğ²Ñ‹Ğ²ĞµÑÑ‚Ğ¸ Ğ¼Ğ¾Ğ¶Ğ½Ğ¾
 
 // foreach dinamic array
 cout<<"ar_d contains "<<endl;
-//for(int i : ar_d) std::cout<<i<<" ";              // íå ğàáîòàåò ïîòîìó ÷òî ar_d ıòî óêàçàòåëü, à íå êîëëåêöèÿ
+//for(int i : ar_d) std::cout<<i<<" ";              // Ğ½Ğµ Ñ€Ğ°Ğ±Ğ¾Ñ‚Ğ°ĞµÑ‚ Ğ¿Ğ¾Ñ‚Ğ¾Ğ¼Ñƒ Ñ‡Ñ‚Ğ¾ ar_d ÑÑ‚Ğ¾ ÑƒĞºĞ°Ğ·Ğ°Ñ‚ĞµĞ»ÑŒ, Ğ° Ğ½Ğµ ĞºĞ¾Ğ»Ğ»ĞµĞºÑ†Ğ¸Ñ
 for(int i : span(ar_d, size)) cout<<i<<" ";          //  C++ 20
 cout<<endl;
 
 ar_d=ar_d+1;
 cout<<"ar_d+1 contains "<<endl;
-for(int i=0; i<size; i++) cout<<ar_d[i]<<" ";    // ar_d[last] îáğàùåíèå â õåğçíàåòêóäà
+for(int i=0; i<size; i++) cout<<ar_d[i]<<" ";    // ar_d[last] Ğ¾Ğ±Ñ€Ğ°Ñ‰ĞµĞ½Ğ¸Ğµ Ğ² Ñ…ĞµÑ€Ğ·Ğ½Ğ°ĞµÑ‚ĞºÑƒĞ´Ğ°
 cout<<endl<<"------------------------------------"<<endl;
 
 
@@ -52,3 +52,18 @@ getch();
 return 0;
 }
 
+ĞĞºĞ°Ğ·Ñ‹Ğ²Ğ°ĞµÑ‚ÑÑ Ğ²Ğ¾ Ğ¼Ğ½Ğ¾Ğ³Ğ¸Ñ… ĞºĞ¾Ğ¼Ğ¿Ğ¸Ğ»ÑÑ‚Ğ¾Ñ€Ğ°Ñ… Ğ¼Ğ¾Ğ¶Ğ½Ğ¾ Ğ´ĞµĞ»Ğ°Ñ‚ÑŒ Ğ¼Ğ°ÑÑĞ¸Ğ² Ğ´Ğ»Ğ¸Ğ½Ñ‹ Ğ¾Ğ¿Ñ€ĞµĞ´ĞµĞ»ÑĞµĞ¼Ğ¾Ğ¹ Ğ½Ğ° ÑÑ‚Ğ°Ğ¿Ğµ Ğ²Ñ‹Ğ¿Ğ¾Ğ»Ğ½ĞµĞ½Ğ¸Ñ!
+Ğ­Ñ‚Ğ¾ Ğ½Ğµ Ğ²ĞºĞ»ÑÑ‡ĞµĞ½Ğ¾ Ğ² ÑÑ‚Ğ°Ğ½Ğ´Ğ°Ñ€Ñ‚, Ğ½Ğ¾ ĞºĞ¾Ğ¼Ğ¿Ğ¸Ğ»ÑÑ‚Ğ¾Ñ€Ñ‹ Ğ¼Ğ¾Ğ³ÑƒÑ‚. Ğ Ğ² Ğ¡Ğ¸ - Ğ²ĞºĞ»ÑÑ‡ĞµĞ½Ğ¾ Ñ Ğ¡99
+
+int main() {
+
+    int n = 10;
+
+    cin >> n;
+
+    int iarr[n];
+
+    cout << sizeof(iarr)/sizeof(int);
+
+    return 0;
+}
