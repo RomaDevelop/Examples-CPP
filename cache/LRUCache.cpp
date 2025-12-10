@@ -1,6 +1,10 @@
 
 https://leetcode.com/problems/lru-cache/description/
 
+// нужно оптимизировать, используя метод std::list::splice. 
+// Он позволяет переместить узел в начало или конец списка без удаления и повторного выделения памяти (перепривязкой указателей), 
+// что еще быстрее, чем связка erase + insert. 
+
 struct CacheItem
 {
 	int value;
