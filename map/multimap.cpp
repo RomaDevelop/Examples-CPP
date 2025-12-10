@@ -15,6 +15,8 @@ int main() {
  
     myMultimap.insert({"овощи", "морковь"});
     myMultimap.insert({"овощи", "картофель"});
+	
+	myMultimap["ягоды"] = "черника"; // нельзя - no match for 'operator[]'
     
     std::cout << "все элементы по порядку\n";
     for (const auto& pair : myMultimap) {
